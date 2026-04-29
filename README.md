@@ -155,8 +155,41 @@ docker run -p 8080:8080 go-meta-redirector :9090
 
 ## 📚 Documentation
 
-- [Kubernetes Deployment](docs/kubernetes.md) - Deploy on K8s with manifests or Helm
+- [Kubernetes Deployment](docs/kubernetes.md) - Deploy with manifests (`k8s/`) or Helm (`helm/`)
 - [Google Cloud Run Deployment](docs/cloud-run.md) - Serverless deployment guide
+
+## 📂 Project Structure
+
+```
+go-meta-redirector/
+├── main.go              # Single-file server implementation
+├── repos.yaml           # Multi-domain configuration
+├── Dockerfile           # Multi-stage Docker build
+├── go.mod               # Go module definition
+├── README.md            # This file
+├── LICENSE              # MIT License
+├── CODE_OF_CONDUCT.md   # Contributor Covenant v2.1
+├── CONTRIBUTING.md      # Development guidelines
+├── SECURITY.md          # Vulnerability reporting
+├── docs/
+│   ├── kubernetes.md    # K8s deployment guide
+│   └── cloud-run.md     # Cloud Run deployment guide
+├── k8s/                # Raw K8s manifests
+│   ├── namespace.yaml
+│   ├── configmap.yaml
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── ingress.yaml
+└── helm/               # Helm chart
+    ├── Chart.yaml
+    ├── values.yaml
+    └── templates/
+        ├── deployment.yaml
+        ├── service.yaml
+        ├── ingress.yaml
+        ├── configmap.yaml
+        └── serviceaccount.yaml
+```
 
 ## 🛠 Development
 
