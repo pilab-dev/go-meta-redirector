@@ -1,13 +1,27 @@
-# Go Module Redirect Server
+# GoMeta Redirector
 Tiny multi-domain Go module redirector for `go get` requests. Supports `go.pilab.hu`, `go.paalgyula.com`, `go.pira.hu` with per-domain config in `repos.yaml`.
 
 ## Usage
+
+### Run Binary
 ```bash
 # Build
-go build -o go-redirector .
+go build -o go-meta-redirector .
 
 # Run (default :8080, specify port as arg)
-./go-redirector :8080
+./go-meta-redirector :8080
+```
+
+### Run with Docker
+```bash
+# Pull from GHCR
+docker pull ghcr.io/pilab-dev/go-meta-redirector:latest
+
+# Run with custom config
+docker run -p 8080:8080 -v $(pwd)/repos.yaml:/etc/go-meta-redirector/repos.yaml ghcr.io/pilab-dev/go-meta-redirector:latest
+
+# Or run with default config
+docker run -p 8080:8080 ghcr.io/pilab-dev/go-meta-redirector:latest
 ```
 
 ## How it works
