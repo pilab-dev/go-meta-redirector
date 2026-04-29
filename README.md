@@ -153,6 +153,11 @@ docker run -p 8080:8080 go-meta-redirector :9090
 
 ---
 
+## 📚 Documentation
+
+- [Kubernetes Deployment](docs/kubernetes.md) - Deploy on K8s with manifests or Helm
+- [Google Cloud Run Deployment](docs/cloud-run.md) - Serverless deployment guide
+
 ## 🛠 Development
 
 ### Prerequisites
