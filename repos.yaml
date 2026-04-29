@@ -1,0 +1,307 @@
+domains:
+  go.pilab.hu:
+    fallback:
+      pattern: "cloud/*"
+      target: "https://github.com/pilab-dev/*"
+    repos:
+      - path: cloud/shadow-sso
+        git_url: https://github.com/pilab-dev/shadow-sso.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso
+      - path: cloud/pivirt-guest-agent
+        git_url: https://github.com/pilab-dev/pivirt-guest-agent.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pivirt-guest-agent
+      - path: cloud/firefighter
+        git_url: https://github.com/pilab-dev/firefighter.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/firefighter
+      - path: cloud/pirat-backend
+        git_url: https://github.com/pilab-dev/pirat-backend.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pirat-backend
+      - path: cloud/pitrust
+        git_url: https://github.com/pilab-dev/pitrust.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pitrust
+      - path: cloud/piplex
+        git_url: https://github.com/pilab-dev/piplex.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/piplex
+      - path: cloud/website
+        git_url: https://github.com/pilab-dev/website.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/website
+      - path: cloud/hackergate
+        git_url: https://github.com/pilab-dev/hackergate.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/hackergate
+      - path: cloud/getemrun
+        git_url: https://github.com/pilab-dev/getemrun.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/getemrun
+      - path: cloud/ion-sdk-js
+        git_url: https://github.com/pilab-dev/ion-sdk-js.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion-sdk-js
+      - path: cloud/pi-fast-shop
+        git_url: https://github.com/pilab-dev/pi-fast-shop.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-fast-shop
+      - path: cloud/pirat-frontend
+        git_url: https://github.com/pilab-dev/pirat-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pirat-frontend
+      - path: cloud/apigeeconf
+        git_url: https://github.com/pilab-dev/apigeeconf.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/apigeeconf
+      - path: cloud/pi-shop-admin
+        git_url: https://github.com/pilab-dev/pi-shop-admin.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-shop-admin
+      - path: cloud/pishop-frontend
+        git_url: https://github.com/pilab-dev/pishop-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-frontend
+      - path: cloud/zamzisrv
+        git_url: https://github.com/pilab-dev/zamzisrv.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/zamzisrv
+      - path: cloud/shadow-sso-frontend
+        git_url: https://github.com/pilab-dev/shadow-sso-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso-frontend
+      - path: cloud/pi-shop-api
+        git_url: https://github.com/pilab-dev/pi-shop-api.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-shop-api
+      - path: cloud/cli-appliance
+        git_url: https://github.com/pilab-dev/cli-appliance.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/cli-appliance
+      - path: cloud/lablab-hackathon
+        git_url: https://github.com/pilab-dev/lablab-hackathon.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/lablab-hackathon
+      - path: cloud/lens
+        git_url: https://github.com/pilab-dev/lens.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/lens
+      - path: cloud/stageground
+        git_url: https://github.com/pilab-dev/stageground.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/stageground
+      - path: cloud/pico-bot
+        git_url: https://github.com/pilab-dev/pico-bot.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pico-bot
+      - path: cloud/pishop-operator
+        git_url: https://github.com/pilab-dev/pishop-operator.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-operator
+      - path: cloud/mesh-manager
+        git_url: https://github.com/pilab-dev/mesh-manager.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/mesh-manager
+      - path: cloud/pishop-services
+        git_url: https://github.com/pilab-dev/pishop-services.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-services
+      - path: cloud/log
+        git_url: https://github.com/pilab-dev/log.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/log
+      - path: cloud/freeflix
+        git_url: https://github.com/pilab-dev/freeflix.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/freeflix
+      - path: cloud/pi-ui
+        git_url: https://github.com/pilab-dev/pi-ui.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-ui
+      - path: cloud/andrewsconsulting.hu
+        git_url: https://github.com/pilab-dev/andrewsconsulting.hu.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/andrewsconsulting.hu
+      - path: cloud/shadow-sso-backend
+        git_url: https://github.com/pilab-dev/shadow-sso-backend.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso-backend
+      - path: cloud/geminai
+        git_url: https://github.com/pilab-dev/geminai.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/geminai
+      - path: cloud/pivirt-agent
+        git_url: https://github.com/pilab-dev/pivirt-agent.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pivirt-agent
+      - path: cloud/tickethere-mobile
+        git_url: https://github.com/pilab-dev/tickethere-mobile.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/tickethere-mobile
+      - path: cloud/go-billingo
+        git_url: https://github.com/pilab-dev/go-billingo.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/go-billingo
+      - path: cloud/ion-proto
+        git_url: https://github.com/pilab-dev/ion-proto.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion-proto
+      - path: cloud/ion
+        git_url: https://github.com/pilab-dev/ion.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion
+      - path: cloud/go-openvswitch
+        git_url: https://github.com/pilab-dev/go-openvswitch.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/go-openvswitch
+      - path: cloud/.github
+        git_url: https://github.com/pilab-dev/.github.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/.github
+      - path: cloud/firebase-provider
+        git_url: https://github.com/pilab-dev/firebase-provider.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/firebase-provider
+      - path: cloud/ipmi_power_exporter
+        git_url: https://github.com/pilab-dev/ipmi_power_exporter.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ipmi_power_exporter
+      - path: cloud/optimg
+        git_url: https://github.com/pilab-dev/optimg.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/optimg
+
+  go.paalgyula.com:
+    fallback:
+      pattern: "tools/*"
+      target: "https://github.com/paalgyula/*"
+    repos:
+      - path: tools/ghcr-pull
+        git_url: https://github.com/paalgyula/ghcr-pull.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ghcr-pull
+      - path: tools/ghcpull
+        git_url: https://github.com/paalgyula/ghcpull.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ghcpull
+      - path: tools/seo-sitemap-service
+        git_url: https://github.com/paalgyula/seo-sitemap-service.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/seo-sitemap-service
+      - path: tools/summit
+        git_url: https://github.com/paalgyula/summit.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/summit
+      - path: tools/l0wf4xtrnt
+        git_url: https://github.com/paalgyula/l0wf4xtrnt.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/l0wf4xtrnt
+      - path: tools/fizz-frontend
+        git_url: https://github.com/paalgyula/fizz-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/fizz-frontend
+      - path: tools/paalgyula.com
+        git_url: https://github.com/paalgyula/paalgyula.com.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula.com
+      - path: tools/mvpsecutiry
+        git_url: https://github.com/paalgyula/mvpsecutiry.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/mvpsecutiry
+      - path: tools/react-fe-exam
+        git_url: https://github.com/paalgyula/react-fe-exam.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/react-fe-exam
+      - path: tools/stageground
+        git_url: https://github.com/paalgyula/stageground.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/stageground
+      - path: tools/pi-shop-api-fe
+        git_url: https://github.com/paalgyula/pi-shop-api-fe.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/pi-shop-api-fe
+      - path: tools/lazydocker
+        git_url: https://github.com/paalgyula/lazydocker.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/lazydocker
+      - path: tools/ldifgen
+        git_url: https://github.com/paalgyula/ldifgen.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ldifgen
+      - path: tools/pilabs-cutting-edge-landing-56
+        git_url: https://github.com/paalgyula/pilabs-cutting-edge-landing-56.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/pilabs-cutting-edge-landing-56
+      - path: tools/pilabs-cutting-edge-landing
+        git_url: https://github.com/paalgyula/pilabs-cutting-edge-landing.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/pilabs-cutting-edge-landing
+      - path: tools/ace-ui2
+        git_url: https://github.com/paalgyula/ace-ui2.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ace-ui2
+      - path: tools/zamzi-remote-flutter
+        git_url: https://github.com/paalgyula/zamzi-remote-flutter.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-remote-flutter
+      - path: tools/messenger
+        git_url: https://github.com/paalgyula/messenger.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/messenger
+      - path: tools/dt-homework
+        git_url: https://github.com/paalgyula/dt-homework.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/dt-homework
+      - path: tools/qtya
+        git_url: https://github.com/paalgyula/qtya.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/qtya
+      - path: tools/flutter-chat
+        git_url: https://github.com/paalgyula/flutter-chat.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/flutter-chat
+      - path: tools/tp-pot
+        git_url: https://github.com/paalgyula/tp-pot.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/tp-pot
+      - path: tools/opa-aur
+        git_url: https://github.com/paalgyula/opa-aur.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/opa-aur
+      - path: tools/cc
+        git_url: https://github.com/paalgyula/cc.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/cc
+      - path: tools/paalgyula
+        git_url: https://github.com/paalgyula/paalgyula.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula
+      - path: tools/zamzi-presenter
+        git_url: https://github.com/paalgyula/zamzi-presenter.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-presenter
+      - path: tools/fake-loader-macos
+        git_url: https://github.com/paalgyula/fake-loader-macos.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/fake-loader-macos
+      - path: tools/zamzi-remote-react-native
+        git_url: https://github.com/paalgyula/zamzi-remote-react-native.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-remote-react-native
+      - path: tools/zamzi-frontend
+        git_url: https://github.com/paalgyula/zamzi-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-frontend
+      - path: tools/universal-admin
+        git_url: https://github.com/paalgyula/universal-admin.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/universal-admin
+      - path: tools/aceplaf
+        git_url: https://github.com/paalgyula/aceplaf.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/aceplaf
+      - path: tools/cadence-samples
+        git_url: https://github.com/paalgyula/cadence-samples.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/cadence-samples
+      - path: tools/go-libzfs
+        git_url: https://github.com/paalgyula/go-libzfs.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/go-libzfs
+      - path: tools/zamzi-client
+        git_url: https://github.com/paalgyula/zamzi-client.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-client
+      - path: tools/gin-zerolog-gcp
+        git_url: https://github.com/paalgyula/gin-zerolog-gcp.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gin-zerolog-gcp
+      - path: tools/auto-coffee
+        git_url: https://github.com/paalgyula/auto-coffee.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/auto-coffee
+      - path: tools/melody
+        git_url: https://github.com/paalgyula/melody.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/melody
+      - path: tools/tree-torrent-tracker
+        git_url: https://github.com/paalgyula/tree-torrent-tracker.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/tree-torrent-tracker
+      - path: tools/jb-license-server
+        git_url: https://github.com/paalgyula/jb-license-server.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/jb-license-server
+      - path: tools/paalgyula.github.io
+        git_url: https://github.com/paalgyula/paalgyula.github.io.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula.github.io
+      - path: tools/mac-load-indicator
+        git_url: https://github.com/paalgyula/mac-load-indicator.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/mac-load-indicator
+      - path: tools/minecraft-hyppolit-bot
+        git_url: https://github.com/paalgyula/minecraft-hyppolit-bot.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/minecraft-hyppolit-bot
+      - path: tools/gws-hera-frontend
+        git_url: https://github.com/paalgyula/gws-hera-frontend.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gws-hera-frontend
+      - path: tools/pure-motion
+        git_url: https://github.com/paalgyula/pure-motion.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/pure-motion
+      - path: tools/xwifi
+        git_url: https://github.com/paalgyula/xwifi.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/xwifi
+      - path: tools/gitblit
+        git_url: https://github.com/paalgyula/gitblit.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gitblit
+      - path: tools/ascent_classic
+        git_url: https://github.com/paalgyula/ascent_classic.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ascent_classic
+      - path: tools/nodeide
+        git_url: https://github.com/paalgyula/nodeide.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/nodeide
+      - path: tools/robomongo
+        git_url: https://github.com/paalgyula/robomongo.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/robomongo
+      - path: tools/gw-invoicer
+        git_url: https://github.com/paalgyula/gw-invoicer.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gw-invoicer
+      - path: tools/gw-dns
+        git_url: https://github.com/paalgyula/gw-dns.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gw-dns
+      - path: tools/zombieland
+        git_url: https://github.com/paalgyula/zombieland.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zombieland
+      - path: tools/ncoredroid
+        git_url: https://github.com/paalgyula/ncoredroid.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ncoredroid
+      - path: tools/id3tagger
+        git_url: https://github.com/paalgyula/id3tagger.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/id3tagger
+      - path: tools/android-pulltorefresh-and-loadmore
+        git_url: https://github.com/paalgyula/android-pulltorefresh-and-loadmore.git
+        pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/android-pulltorefresh-and-loadmore
+
+  go.pira.hu:
+    fallback: ~
+    repos: []
