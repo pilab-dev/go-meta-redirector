@@ -243,5 +243,5 @@ Pull requests welcome! Please open an issue first for major changes.
 ---
 
 <p align="center">
-  Built with ❤️ by <a href="https://github.com/pilab-dev">PiLab</a>
+  Built with ❤️ by <a href="https://pilab.hu">Progressive Innovation LAB</a>
 </p>
