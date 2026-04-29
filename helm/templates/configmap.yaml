@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "go-meta-redirector.fullname" . }}-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "go-meta-redirector.labels" . | nindent 4 }}
+data:
+  repos.yaml: |
+    {{- .Values.config.repos.yaml | nindent 4 }}

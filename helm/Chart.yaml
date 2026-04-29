@@ -1,0 +1,11 @@
+apiVersion: v2
+name: go-meta-redirector
+version: 1.0.0
+appVersion: "1.0.0"
+description: A Helm chart for GoMeta Redirector - multi-domain Go module redirector
+type: application
+
+maintainers:
+  - name: Progressive Innovation LAB
+    email: gyula@pilab.hu
+    url: https://pilab.hu

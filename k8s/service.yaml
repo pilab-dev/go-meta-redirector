@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-meta-redirector
+  namespace: go-meta-redirector
+  labels:
+    app: go-meta-redirector
+spec:
+  type: ClusterIP
+  selector:
+    app: go-meta-redirector
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+    name: http

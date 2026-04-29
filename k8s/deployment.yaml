@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-meta-redirector
+  namespace: go-meta-redirector
+  labels:
+    app: go-meta-redirector
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-meta-redirector
+  template:
+    metadata:
+      labels:
+        app: go-meta-redirector
+    spec:
+      containers:
+      - name: go-meta-redirector
+        image: ghcr.io/pilab-dev/go-meta-redirector:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - name: config
+          mountPath: /etc/go-meta-redirector
+          readOnly: true
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 3
+      volumes:
+      - name: config
+        configMap:
+          name: go-meta-redirector-config
+      restartPolicy: Always

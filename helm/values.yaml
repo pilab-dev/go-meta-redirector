@@ -1,0 +1,101 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/pilab-dev/go-meta-redirector
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+  protocol: TCP
+  annotations: {}
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: go.pilab.hu
+      paths:
+        - path: /
+          pathType: Prefix
+    - host: go.paalgyula.com
+      paths:
+        - path: /
+          pathType: Prefix
+    - host: go.pira.hu
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: go-meta-redirector-tls
+      hosts:
+        - go.pilab.hu
+        - go.paalgyula.com
+        - go.pira.hu
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+config:
+  repos.yaml: |
+    domains:
+      go.pilab.hu:
+        fallback:
+          pattern: "cloud/*"
+          target: "https://github.com/pilab-dev/*"
+        repos: []
+      go.paalgyula.com:
+        fallback:
+          pattern: "tools/*"
+          target: "https://github.com/paalgyula/*"
+        repos: []
+      go.pira.hu:
+        fallback: ~
+        repos: []

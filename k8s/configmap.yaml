@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-meta-redirector-config
+  namespace: go-meta-redirector
+  labels:
+    app: go-meta-redirector
+data:
+  repos.yaml: |
+    domains:
+      go.pilab.hu:
+        fallback:
+          pattern: "cloud/*"
+          target: "https://github.com/pilab-dev/*"
+        repos:
+          - path: cloud/log
+            git_url: https://github.com/pilab-dev/log.git
+            pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/log
+      go.paalgyula.com:
+        fallback:
+          pattern: "tools/*"
+          target: "https://github.com/paalgyula/*"
+        repos: []
+      go.pira.hu:
+        fallback: ~
+        repos: []
