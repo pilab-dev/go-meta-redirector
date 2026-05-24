@@ -1,0 +1,19 @@
+domains:
+  go.pilab.hu:
+    fallback:
+      pattern: "cloud/*"
+      target: "https://github.com/pilab-dev/*"
+    repos:
+      - path: cloud/shadow-sso
+        git_url: https://github.com/pilab-dev/shadow-sso.git
+        pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso
+
+  go.paalgyula.com:
+    fallback:
+      pattern: "tools/*"
+      target: "https://github.com/paalgyula/*"
+    repos: []
+
+  go.pira.hu:
+    fallback: ~
+    repos: []

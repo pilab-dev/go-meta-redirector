@@ -1,7 +1,9 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -10,6 +12,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 )
+
+//go:embed landing.html
+var landingTemplate string
 
 type Config struct {
 	Domains map[string]DomainConfig `yaml:"domains"`
@@ -26,9 +31,10 @@ type FallbackConfig struct {
 }
 
 type Repo struct {
-	Path       string `yaml:"path"`
-	GitURL     string `yaml:"git_url"`
-	PkgsiteURL string `yaml:"pkgsite_url,omitempty"`
+	Path        string `yaml:"path"`
+	Description string `yaml:"description,omitempty"`
+	GitURL      string `yaml:"git_url"`
+	PkgsiteURL  string `yaml:"pkgsite_url,omitempty"`
 }
 
 var config Config
@@ -104,7 +110,54 @@ func lookup(host, reqPath string) (gitURL, pkgsiteURL string, ok bool) {
 	return "", "", false
 }
 
+type landingRepo struct {
+	Domain      string
+	FullPath    string
+	ShortPath   string
+	Description string
+	GitHubURL   string
+	PkgsiteURL  string
+}
+
+type landingData struct {
+	Repos []landingRepo
+}
+
+func renderLanding(w http.ResponseWriter, r *http.Request) {
+	var repos []landingRepo
+
+	for domain, cfg := range config.Domains {
+		for _, repo := range cfg.Repos {
+			fullPath := domain + "/" + repo.Path
+			repos = append(repos, landingRepo{
+				Domain:      domain,
+				FullPath:    fullPath,
+				ShortPath:   repo.Path,
+				Description: repo.Description,
+				GitHubURL:   strings.TrimSuffix(repo.GitURL, ".git"),
+				PkgsiteURL:  repo.PkgsiteURL,
+			})
+		}
+	}
+
+	tmpl, err := template.New("landing").Parse(landingTemplate)
+	if err != nil {
+		http.Error(w, "Internal error", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	if err := tmpl.Execute(w, landingData{Repos: repos}); err != nil {
+		log.Printf("Template execution error: %v", err)
+	}
+}
+
 func handler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/" {
+		renderLanding(w, r)
+		return
+	}
+
 	host := r.Host
 	reqPath := strings.TrimPrefix(r.URL.Path, "/")
 	gitURL, pkgsiteURL, ok := lookup(host, reqPath)

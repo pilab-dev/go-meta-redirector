@@ -5,129 +5,171 @@ domains:
       target: "https://github.com/pilab-dev/*"
     repos:
       - path: cloud/shadow-sso
+        description: Centralized authentication and SSO service
         git_url: https://github.com/pilab-dev/shadow-sso.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso
       - path: cloud/pivirt-guest-agent
+        description: PiVirt guest agent for virtual machines
         git_url: https://github.com/pilab-dev/pivirt-guest-agent.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pivirt-guest-agent
       - path: cloud/firefighter
+        description: Incident response and alerting service
         git_url: https://github.com/pilab-dev/firefighter.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/firefighter
       - path: cloud/pirat-backend
+        description: PiRAT issue tracker backend API
         git_url: https://github.com/pilab-dev/pirat-backend.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pirat-backend
       - path: cloud/pitrust
+        description: Trust and security assessment service
         git_url: https://github.com/pilab-dev/pitrust.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pitrust
       - path: cloud/piplex
+        description: Plex media server management
         git_url: https://github.com/pilab-dev/piplex.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/piplex
       - path: cloud/website
+        description: PiLAB website
         git_url: https://github.com/pilab-dev/website.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/website
       - path: cloud/hackergate
+        description: Security gateway and VPN management
         git_url: https://github.com/pilab-dev/hackergate.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/hackergate
       - path: cloud/getemrun
+        description: Go test runner and automation
         git_url: https://github.com/pilab-dev/getemrun.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/getemrun
       - path: cloud/ion-sdk-js
+        description: Ion real-time communication SDK for JavaScript
         git_url: https://github.com/pilab-dev/ion-sdk-js.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion-sdk-js
       - path: cloud/pi-fast-shop
+        description: Fast e-commerce platform
         git_url: https://github.com/pilab-dev/pi-fast-shop.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-fast-shop
       - path: cloud/pirat-frontend
+        description: PiRAT issue tracker frontend
         git_url: https://github.com/pilab-dev/pirat-frontend.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pirat-frontend
       - path: cloud/apigeeconf
+        description: Apigee API proxy configuration tool
         git_url: https://github.com/pilab-dev/apigeeconf.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/apigeeconf
       - path: cloud/pi-shop-admin
+        description: PiShop administration panel
         git_url: https://github.com/pilab-dev/pi-shop-admin.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-shop-admin
       - path: cloud/pishop-frontend
+        description: PiShop storefront
         git_url: https://github.com/pilab-dev/pishop-frontend.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-frontend
       - path: cloud/zamzisrv
+        description: Zamzi backend server
         git_url: https://github.com/pilab-dev/zamzisrv.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/zamzisrv
       - path: cloud/shadow-sso-frontend
+        description: Shadow SSO administration UI
         git_url: https://github.com/pilab-dev/shadow-sso-frontend.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso-frontend
       - path: cloud/pi-shop-api
+        description: PiShop REST API
         git_url: https://github.com/pilab-dev/pi-shop-api.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-shop-api
       - path: cloud/cli-appliance
+        description: CLI appliance management tool
         git_url: https://github.com/pilab-dev/cli-appliance.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/cli-appliance
       - path: cloud/lablab-hackathon
+        description: LabLab hackathon project
         git_url: https://github.com/pilab-dev/lablab-hackathon.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/lablab-hackathon
       - path: cloud/lens
+        description: Monitoring and observability lens
         git_url: https://github.com/pilab-dev/lens.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/lens
       - path: cloud/stageground
+        description: Development staging environment
         git_url: https://github.com/pilab-dev/stageground.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/stageground
       - path: cloud/pico-bot
+        description: Pico service bot
         git_url: https://github.com/pilab-dev/pico-bot.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pico-bot
       - path: cloud/pishop-operator
+        description: PiShop Kubernetes operator
         git_url: https://github.com/pilab-dev/pishop-operator.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-operator
       - path: cloud/mesh-manager
+        description: Service mesh configuration manager
         git_url: https://github.com/pilab-dev/mesh-manager.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/mesh-manager
       - path: cloud/pishop-services
+        description: PiShop microservices
         git_url: https://github.com/pilab-dev/pishop-services.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pishop-services
       - path: cloud/log
+        description: Centralized logging service
         git_url: https://github.com/pilab-dev/log.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/log
       - path: cloud/freeflix
+        description: Media streaming service
         git_url: https://github.com/pilab-dev/freeflix.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/freeflix
       - path: cloud/pi-ui
+        description: PiLAB UI component library
         git_url: https://github.com/pilab-dev/pi-ui.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pi-ui
       - path: cloud/andrewsconsulting.hu
+        description: Andrews Consulting website
         git_url: https://github.com/pilab-dev/andrewsconsulting.hu.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/andrewsconsulting.hu
       - path: cloud/shadow-sso-backend
+        description: Shadow SSO backend API
         git_url: https://github.com/pilab-dev/shadow-sso-backend.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/shadow-sso-backend
       - path: cloud/geminai
+        description: Gemini AI integration service
         git_url: https://github.com/pilab-dev/geminai.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/geminai
       - path: cloud/pivirt-agent
+        description: PiVirt agent
         git_url: https://github.com/pilab-dev/pivirt-agent.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/pivirt-agent
       - path: cloud/tickethere-mobile
+        description: TicketHere mobile application
         git_url: https://github.com/pilab-dev/tickethere-mobile.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/tickethere-mobile
       - path: cloud/go-billingo
+        description: Billingo invoicing API Go client
         git_url: https://github.com/pilab-dev/go-billingo.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/go-billingo
       - path: cloud/ion-proto
+        description: Ion protocol buffer definitions
         git_url: https://github.com/pilab-dev/ion-proto.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion-proto
       - path: cloud/ion
+        description: Ion signaling and media server
         git_url: https://github.com/pilab-dev/ion.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ion
       - path: cloud/go-openvswitch
+        description: Open vSwitch Go bindings
         git_url: https://github.com/pilab-dev/go-openvswitch.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/go-openvswitch
       - path: cloud/.github
+        description: GitHub community health files
         git_url: https://github.com/pilab-dev/.github.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/.github
       - path: cloud/firebase-provider
+        description: Firebase authentication provider
         git_url: https://github.com/pilab-dev/firebase-provider.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/firebase-provider
       - path: cloud/ipmi_power_exporter
+        description: IPMI power metrics Prometheus exporter
         git_url: https://github.com/pilab-dev/ipmi_power_exporter.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/ipmi_power_exporter
       - path: cloud/optimg
+        description: Image optimization and processing service
         git_url: https://github.com/pilab-dev/optimg.git
         pkgsite_url: https://pkg.go.dev/go.pilab.hu/cloud/optimg
 
@@ -137,12 +179,15 @@ domains:
       target: "https://github.com/paalgyula/*"
     repos:
       - path: tools/ghcr-pull
+        description: GitHub Container Registry image pull tool
         git_url: https://github.com/paalgyula/ghcr-pull.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ghcr-pull
       - path: tools/ghcpull
+        description: GitHub CLI pull tool
         git_url: https://github.com/paalgyula/ghcpull.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ghcpull
       - path: tools/seo-sitemap-service
+        description: SEO sitemap generation service
         git_url: https://github.com/paalgyula/seo-sitemap-service.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/seo-sitemap-service
       - path: tools/summit
@@ -155,24 +200,30 @@ domains:
         git_url: https://github.com/paalgyula/fizz-frontend.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/fizz-frontend
       - path: tools/paalgyula.com
+        description: Personal website
         git_url: https://github.com/paalgyula/paalgyula.com.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula.com
       - path: tools/mvpsecutiry
         git_url: https://github.com/paalgyula/mvpsecutiry.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/mvpsecutiry
       - path: tools/react-fe-exam
+        description: React frontend exam project
         git_url: https://github.com/paalgyula/react-fe-exam.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/react-fe-exam
       - path: tools/stageground
+        description: Development staging environment
         git_url: https://github.com/paalgyula/stageground.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/stageground
       - path: tools/pi-shop-api-fe
+        description: PiShop API frontend
         git_url: https://github.com/paalgyula/pi-shop-api-fe.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/pi-shop-api-fe
       - path: tools/lazydocker
+        description: LazyDocker TUI management tool
         git_url: https://github.com/paalgyula/lazydocker.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/lazydocker
       - path: tools/ldifgen
+        description: LDIF file generator
         git_url: https://github.com/paalgyula/ldifgen.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ldifgen
       - path: tools/pilabs-cutting-edge-landing-56
@@ -185,6 +236,7 @@ domains:
         git_url: https://github.com/paalgyula/ace-ui2.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ace-ui2
       - path: tools/zamzi-remote-flutter
+        description: Zamzi remote control Flutter app
         git_url: https://github.com/paalgyula/zamzi-remote-flutter.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-remote-flutter
       - path: tools/messenger
@@ -197,6 +249,7 @@ domains:
         git_url: https://github.com/paalgyula/qtya.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/qtya
       - path: tools/flutter-chat
+        description: Flutter chat application
         git_url: https://github.com/paalgyula/flutter-chat.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/flutter-chat
       - path: tools/tp-pot
@@ -212,15 +265,18 @@ domains:
         git_url: https://github.com/paalgyula/paalgyula.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula
       - path: tools/zamzi-presenter
+        description: Zamzi presentation tool
         git_url: https://github.com/paalgyula/zamzi-presenter.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-presenter
       - path: tools/fake-loader-macos
         git_url: https://github.com/paalgyula/fake-loader-macos.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/fake-loader-macos
       - path: tools/zamzi-remote-react-native
+        description: Zamzi remote control React Native app
         git_url: https://github.com/paalgyula/zamzi-remote-react-native.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-remote-react-native
       - path: tools/zamzi-frontend
+        description: Zamzi frontend application
         git_url: https://github.com/paalgyula/zamzi-frontend.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-frontend
       - path: tools/universal-admin
@@ -230,15 +286,19 @@ domains:
         git_url: https://github.com/paalgyula/aceplaf.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/aceplaf
       - path: tools/cadence-samples
+        description: Cadence workflow samples
         git_url: https://github.com/paalgyula/cadence-samples.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/cadence-samples
       - path: tools/go-libzfs
+        description: Go bindings for libzfs
         git_url: https://github.com/paalgyula/go-libzfs.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/go-libzfs
       - path: tools/zamzi-client
+        description: Zamzi client application
         git_url: https://github.com/paalgyula/zamzi-client.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/zamzi-client
       - path: tools/gin-zerolog-gcp
+        description: Gin middleware for zerolog on GCP
         git_url: https://github.com/paalgyula/gin-zerolog-gcp.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gin-zerolog-gcp
       - path: tools/auto-coffee
@@ -248,18 +308,23 @@ domains:
         git_url: https://github.com/paalgyula/melody.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/melody
       - path: tools/tree-torrent-tracker
+        description: BitTorrent tracker
         git_url: https://github.com/paalgyula/tree-torrent-tracker.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/tree-torrent-tracker
       - path: tools/jb-license-server
+        description: JetBrains license server
         git_url: https://github.com/paalgyula/jb-license-server.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/jb-license-server
       - path: tools/paalgyula.github.io
+        description: GitHub Pages site
         git_url: https://github.com/paalgyula/paalgyula.github.io.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/paalgyula.github.io
       - path: tools/mac-load-indicator
+        description: macOS menu bar load indicator
         git_url: https://github.com/paalgyula/mac-load-indicator.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/mac-load-indicator
       - path: tools/minecraft-hyppolit-bot
+        description: Minecraft Hyppolit bot
         git_url: https://github.com/paalgyula/minecraft-hyppolit-bot.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/minecraft-hyppolit-bot
       - path: tools/gws-hera-frontend
@@ -284,9 +349,11 @@ domains:
         git_url: https://github.com/paalgyula/robomongo.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/robomongo
       - path: tools/gw-invoicer
+        description: GW invoicing tool
         git_url: https://github.com/paalgyula/gw-invoicer.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gw-invoicer
       - path: tools/gw-dns
+        description: GW DNS management tool
         git_url: https://github.com/paalgyula/gw-dns.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/gw-dns
       - path: tools/zombieland
@@ -296,9 +363,11 @@ domains:
         git_url: https://github.com/paalgyula/ncoredroid.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/ncoredroid
       - path: tools/id3tagger
+        description: ID3 tag editor
         git_url: https://github.com/paalgyula/id3tagger.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/id3tagger
       - path: tools/android-pulltorefresh-and-loadmore
+        description: Android pull-to-refresh library
         git_url: https://github.com/paalgyula/android-pulltorefresh-and-loadmore.git
         pkgsite_url: https://pkg.go.dev/go.paalgyula.com/tools/android-pulltorefresh-and-loadmore
 
