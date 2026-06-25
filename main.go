@@ -33,6 +33,7 @@ type FallbackConfig struct {
 type Repo struct {
 	Path        string `yaml:"path"`
 	Description string `yaml:"description,omitempty"`
+	Private     bool   `yaml:"private,omitempty"`
 	GitURL      string `yaml:"git_url"`
 	PkgsiteURL  string `yaml:"pkgsite_url,omitempty"`
 }
@@ -115,6 +116,7 @@ type landingRepo struct {
 	FullPath    string
 	ShortPath   string
 	Description string
+	Private     bool
 	GitHubURL   string
 	PkgsiteURL  string
 }
@@ -134,6 +136,7 @@ func renderLanding(w http.ResponseWriter, r *http.Request) {
 				FullPath:    fullPath,
 				ShortPath:   repo.Path,
 				Description: repo.Description,
+				Private:     repo.Private,
 				GitHubURL:   strings.TrimSuffix(repo.GitURL, ".git"),
 				PkgsiteURL:  repo.PkgsiteURL,
 			})
