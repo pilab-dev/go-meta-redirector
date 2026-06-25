@@ -8,6 +8,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o go-meta-redirector .
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 COPY --from=builder /app/go-meta-redirector /usr/local/bin/go-meta-redirector
-COPY repos.yaml.example /etc/go-meta-redirector/repos.yaml
+WORKDIR /etc/go-meta-redirector
+COPY repos.yaml .
 EXPOSE 8080
 ENTRYPOINT ["go-meta-redirector"]
