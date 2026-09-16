@@ -15,10 +15,22 @@ spec:
       labels:
         app: go-meta-redirector
     spec:
+      imagePullSecrets:
+      - name: ghcr-secret
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        seccompProfile:
+          type: RuntimeDefault
       containers:
       - name: go-meta-redirector
-        image: ghcr.io/pilab-dev/go-meta-redirector:latest
+        image: ghcr.io/pilab-dev/go-meta-redirector:main
         imagePullPolicy: Always
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
         ports:
         - containerPort: 8080
           name: http
@@ -35,15 +47,13 @@ spec:
             memory: "128Mi"
             cpu: "100m"
         livenessProbe:
-          httpGet:
-            path: /
+          tcpSocket:
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 30
           timeoutSeconds: 5
         readinessProbe:
-          httpGet:
-            path: /
+          tcpSocket:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 10
