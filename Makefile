@@ -1,6 +1,7 @@
-.PHONY: help build run test clean docker-build docker-run docker-push k8s-deploy k8s-delete helm-package helm-install
+.PHONY: help build run check-repos test clean docker-build docker-run docker-push k8s-deploy k8s-delete helm-package helm-install
 
 BINARY_NAME=go-meta-redirector
+CHECK_REPOS_BINARY=check-repos
 DOCKER_IMAGE=ghcr.io/pilab-dev/go-meta-redirector
 VERSION?=latest
 
@@ -16,11 +17,14 @@ build: ## Build the Go binary
 run: ## Run the server locally
 	go run . :8080
 
+check-repos: ## Build repo visibility checker
+	go build -o $(CHECK_REPOS_BINARY) ./cmd/check-repos/
+
 test: ## Run tests
 	go test -v ./...
 
 clean: ## Clean build artifacts
-	rm -f $(BINARY_NAME)
+	rm -f $(BINARY_NAME) $(CHECK_REPOS_BINARY)
 	go clean
 
 # Docker targets

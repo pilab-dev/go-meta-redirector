@@ -154,6 +154,11 @@
             text-transform: uppercase;
         }
 
+        .badge-private {
+            color: #f0c040;
+            background: rgba(240, 192, 64, 0.1);
+        }
+
         .search-section {
             padding: 1rem 2rem 3rem;
             max-width: 1400px;
@@ -397,9 +402,10 @@
         <div class="package-count"><span id="count">{{len .Repos}}</span> packages</div>
         <div class="package-grid" id="grid">
             {{range .Repos}}
-            <div class="package-card" data-search="{{.FullPath}} {{.ShortPath}} {{.Description}}">
+            <div class="package-card" data-search="{{.FullPath}} {{.ShortPath}} {{.Description}} {{if .Private}}private{{end}}">
                 <div class="package-path">
                     <code>{{.FullPath}}</code>
+                    {{if .Private}}<span class="badge badge-private">Private</span>{{end}}
                     <button class="package-copy" onclick="copyPath(this, '{{.FullPath}}')">Copy</button>
                 </div>
                 {{if .Description}}
