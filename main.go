@@ -62,52 +62,58 @@ func loadConfig() error {
 	return yaml.Unmarshal(data, &config)
 }
 
-func matchFallback(pattern, target, reqPath string) (string, bool) {
+// matchFallback maps reqPath onto target. The wildcard is the repository name
+// only: anything after its first path segment (a Go major-version suffix such
+// as /v3, or a package directory) stays in the import path but never becomes
+// part of the git URL. It returns the git URL and the module root path
+// (pattern prefix + repository), which is what go-import must advertise.
+func matchFallback(pattern, target, reqPath string) (gitURL, rootPath string, ok bool) {
 	parts := strings.Split(pattern, "*")
 	if len(parts) != 2 {
-		return "", false
+		return "", "", false
 	}
 	prefix := parts[0]
 	suffix := parts[1]
 
 	if !strings.HasPrefix(reqPath, prefix) || !strings.HasSuffix(reqPath, suffix) {
-		return "", false
+		return "", "", false
 	}
 
 	wildcard := strings.TrimPrefix(reqPath, prefix)
 	wildcard = strings.TrimSuffix(wildcard, suffix)
-	if wildcard == "" {
-		return "", false
+	repo, _, _ := strings.Cut(wildcard, "/")
+	if repo == "" {
+		return "", "", false
 	}
 
-	gitURL := strings.Replace(target, "*", wildcard, 1)
+	gitURL = strings.Replace(target, "*", repo, 1)
 	if !strings.HasSuffix(gitURL, ".git") {
 		gitURL += ".git"
 	}
-	return gitURL, true
+	return gitURL, prefix + repo, true
 }
 
-func lookup(host, reqPath string) (gitURL, pkgsiteURL string, ok bool) {
+func lookup(host, reqPath string) (gitURL, pkgsiteURL, rootPath string, ok bool) {
 	host = strings.Split(host, ":")[0]
 	domain, exists := config.Domains[host]
 	if !exists {
-		return "", "", false
+		return "", "", "", false
 	}
 
 	for _, repo := range domain.Repos {
 		if repo.Path == reqPath {
-			return repo.GitURL, repo.PkgsiteURL, true
+			return repo.GitURL, repo.PkgsiteURL, repo.Path, true
 		}
 	}
 
 	if domain.Fallback != nil {
-		gitURL, ok := matchFallback(domain.Fallback.Pattern, domain.Fallback.Target, reqPath)
+		gitURL, rootPath, ok := matchFallback(domain.Fallback.Pattern, domain.Fallback.Target, reqPath)
 		if ok {
-			return gitURL, "", true
+			return gitURL, "", rootPath, true
 		}
 	}
 
-	return "", "", false
+	return "", "", "", false
 }
 
 type landingRepo struct {
@@ -160,7 +166,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	host := r.Host
 	reqPath := strings.TrimPrefix(r.URL.Path, "/")
-	gitURL, pkgsiteURL, ok := lookup(host, reqPath)
+	gitURL, pkgsiteURL, rootPath, ok := lookup(host, reqPath)
 
 	if !ok {
 		http.NotFound(w, r)
@@ -169,7 +175,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	if r.URL.Query().Get("go-get") == "1" {
 		w.Header().Set("Content-Type", "text/html")
-		fmt.Fprintf(w, `<html><head><meta name="go-import" content="%s/%s git %s"></head></html>`, host, reqPath, gitURL)
+		fmt.Fprintf(w, `<html><head><meta name="go-import" content="%s/%s git %s"></head></html>`, host, rootPath, gitURL)
 		return
 	}
 
