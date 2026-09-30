@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http/httptest"
+	"strings"
 	"testing"
 )
 
@@ -40,5 +41,38 @@ func TestHandlerAdvertisesModuleRoot(t *testing.T) {
 		if got := rec.Body.String(); got != want {
 			t.Errorf("%s: got %s", path, got)
 		}
+	}
+}
+
+func TestLookupExplicitRepoCoversMajorSuffixAndSubpackages(t *testing.T) {
+	config = Config{Domains: map[string]DomainConfig{"go.pilab.hu": {
+		Repos:    []Repo{{Path: "cloud/director", GitURL: "https://github.com/pilab-cloud/director.git"}},
+		Fallback: &FallbackConfig{Pattern: "cloud/*", Target: "https://github.com/pilab-dev/*"},
+	}}}
+
+	for _, path := range []string{"cloud/director", "cloud/director/v3", "cloud/director/v3/internal/x"} {
+		git, _, root, ok := lookup("go.pilab.hu", path)
+		if !ok || git != "https://github.com/pilab-cloud/director.git" || root != "cloud/director" {
+			t.Errorf("%s: got %q %q %v", path, git, root, ok)
+		}
+	}
+
+	if git, _, _, _ := lookup("go.pilab.hu", "cloud/director-tools"); git != "https://github.com/pilab-dev/director-tools.git" {
+		t.Errorf("a longer sibling name must not match the explicit entry, got %s", git)
+	}
+}
+
+func TestLandingHidesHiddenRepos(t *testing.T) {
+	config = Config{Domains: map[string]DomainConfig{"go.pilab.hu": {Repos: []Repo{
+		{Path: "cloud/public", GitURL: "https://github.com/pilab-dev/public.git"},
+		{Path: "cloud/secret", GitURL: "https://github.com/pilab-cloud/secret.git", Hidden: true},
+	}}}}
+
+	rec := httptest.NewRecorder()
+	renderLanding(rec, httptest.NewRequest("GET", "/", nil))
+
+	body := rec.Body.String()
+	if !strings.Contains(body, "cloud/public") || strings.Contains(body, "cloud/secret") {
+		t.Errorf("landing must list public and hide secret repos")
 	}
 }

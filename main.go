@@ -35,6 +35,9 @@ type Repo struct {
 	Description string `yaml:"description,omitempty"`
 	GitURL      string `yaml:"git_url"`
 	PkgsiteURL  string `yaml:"pkgsite_url,omitempty"`
+	// Hidden keeps a repo resolvable for go-get but off the public landing
+	// page (private repositories).
+	Hidden bool `yaml:"hidden,omitempty"`
 }
 
 var config Config
@@ -101,7 +104,7 @@ func lookup(host, reqPath string) (gitURL, pkgsiteURL, rootPath string, ok bool)
 	}
 
 	for _, repo := range domain.Repos {
-		if repo.Path == reqPath {
+		if reqPath == repo.Path || strings.HasPrefix(reqPath, repo.Path+"/") {
 			return repo.GitURL, repo.PkgsiteURL, repo.Path, true
 		}
 	}
@@ -134,6 +137,9 @@ func renderLanding(w http.ResponseWriter, r *http.Request) {
 
 	for domain, cfg := range config.Domains {
 		for _, repo := range cfg.Repos {
+			if repo.Hidden {
+				continue
+			}
 			fullPath := domain + "/" + repo.Path
 			repos = append(repos, landingRepo{
 				Domain:      domain,
